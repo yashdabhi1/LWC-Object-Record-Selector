@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Object and Record Selector" icon-name="action:record" size="small">
+        <lightning-layout multiple-rows="true" class="slds-p-around_medium">
+            <lightning-layout-item size="1">
+                <div class="custom-box1">
+                    <lightning-combobox
+                        name="objectSelector"
+                        placeholder="Choose an Object"
+                        options={objectOptions}
+                        value={selectedObject}
+                        onchange={handleObjectChange}>
+                    </lightning-combobox>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="11" medium-device-size="11" small-device-size="11" large-device-size="11">
+                <div class="custom-box2">
+                    <template if:true={recordOptions}>
+                        <lightning-combobox
+                            name="recordSelector"
+                            placeholder="Choose a Record"
+                            options={recordOptions}
+                            value={selectedRecord}
+                            onchange={handleRecordChange}>
+                        </lightning-combobox>
+                    </template>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        
+    </lightning-card>
+</template>
